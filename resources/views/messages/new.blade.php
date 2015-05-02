@@ -1,9 +1,10 @@
 @extends('app')
-@section('content')
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <link media="all" type="text/css" rel="stylesheet" href="/css/jquery-ui.min.css">
-    <script src="/js/jquery-ui.min.js"></script>
 
+@section('stylesheets')
+    <link media="all" type="text/css" rel="stylesheet" href="/css/jquery-ui.min.css">
+@endsection
+
+@section('content')
     <form>
         <div class="form-group">
             <input type="text" name="touser" class="form-control" id="autocomplete" placeholder="Receiving Username*">
@@ -27,6 +28,7 @@
 @endsection
 
 @section('javascript')
+    <script src="/js/jquery-ui.min.js"></script>
 
     <script style="text/javascript">
         $(function() {
