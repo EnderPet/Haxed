@@ -68,7 +68,7 @@
                     <!-- <a href="/profile" class="list-group-item">Profil</a> -->
                     <!-- <a href="/gang" class="list-group-item">Gäng</a> -->
                     <a href="/" class="list-group-item">Nyheter</a>
-                    <a href="/messages" class="list-group-item">Meddelanden</a>
+                    <a href="/messages" class="list-group-item {{ Request::is('messages*' ? 'active' : '') }}">Meddelanden</a>
                     <!-- <a href="/chat" class="list-group-item">Chatt</a> -->
                     <!-- <a href="/forum" class="list-group-item">Forum</a> -->
                     <!-- <a href="/internet" class="list-group-item">Internet</a> -->
