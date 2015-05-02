@@ -4,6 +4,8 @@ class MessagesController extends Controller {
 
     public function index()
     {
+        $mess = '';
+
         return view('messages.index');
     }
 
