@@ -4,7 +4,7 @@
     <link media="all" type="text/css" rel="stylesheet" href="/css/jquery-ui.min.css">
     <script src="/js/jquery-ui.min.js"></script>
 
-    <script style="text/javascript" onload="">
+    <script style="text/javascript">
         $(function() {
             $("#autocomplete").autocomplete({
                 source: "searchusers",
