@@ -23,9 +23,3 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
-
-
-Route::get('/artisan', function()
-{
-    Artisan::call('make:migration', ['--create' => 'burners']);
-});
