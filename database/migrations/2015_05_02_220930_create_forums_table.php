@@ -23,6 +23,11 @@ class CreateForumsTable extends Migration {
             $table->string('created_by');
             $table->string('updated_by');
 			$table->timestamps();
+
+            $table->foreign('id')
+                  ->references('forum_threads_id')
+                  ->on('forum_replies')
+                  ->onDelete('cascade');
 		});
 
         Schema::create('forum_replies', function(Blueprint $table){

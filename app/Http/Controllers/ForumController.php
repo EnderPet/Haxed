@@ -14,7 +14,8 @@ class ForumController extends Controller {
     }
 
     public function index(){
-        return view('forum.index');
+        $threads = ForumThreads::get();
+        return view('forum.index')->with(array('threads' => $threads));
     }
 
     public function startDiscussion(ForumThreadRequest $request){

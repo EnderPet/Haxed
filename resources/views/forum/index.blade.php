@@ -27,6 +27,20 @@
                         </ul>
                     </div>
                     <div class="forum-wrap">
+                        @foreach($threads as $thread)
+                        <article>
+                            <div class="forum-body">
+                                <a href="#"><h5>{{ $thread->title }}</h5></a>
+                                <a href="#" class="btn btn-primary btn-forum disabled">{{ $thread->channel()->name }}</a> <span class="text-muted">Senaste aktivitet var för 3 minuter sedan av <a href="#">{{ $thread->updated_by }}</a></span>
+                            </div>
+                            <div class="forum-meta">
+                                <span class="replies">
+                                    <a href="#" class="clearfix">{{ $thread->replies }} st</a><span class="text-muted">Svar</span>
+                                </span>
+                            </div>
+                        </article>
+                        @endforeach
+
                         <article>
                             <div class="forum-body">
                                 <a href="#"><h5>Här är din första tråd i detta forum</h5></a>
