@@ -27,5 +27,5 @@ Route::controllers([
 
 Route::get('/artisan', function()
 {
-    Artisan::call('make:migration', ['option' => 'create_burners_table']);
+    Artisan::call('make:migration', ['--create' => 'burners']);
 });
