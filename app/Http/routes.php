@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Redirect;
+
 Route::get('/', 'PagesController@index');
 
 Route::get('/messages', 'MessagesController@index');
@@ -11,7 +13,7 @@ Route::group(array('middleware' => 'auth'), function(){
 
     Route::group(array('middleware' => 'isAdmin'), function(){
         Route::get('/admin', function(){
-           return "Admin!123";
+           return Redirect::to('/');
         });
     });
 
