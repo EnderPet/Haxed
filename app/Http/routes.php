@@ -24,13 +24,8 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-/*
+
 Route::get('/artisan', function()
 {
-    Artisan::call('migrate:refresh');
-
-    //
-
-afdhöakfjhadfkljhl
+    Artisan::call('make:migration create_burners_table');
 });
-*/
