@@ -20,7 +20,7 @@ class CreateMessagesTable extends Migration {
             $table->string('title');
             $table->text('message');
             $table->integer('seen');
-			$table->timestamps();
+            $table->timestamp('sentat');
 		});
 	}
 

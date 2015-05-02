@@ -1,10 +1,17 @@
 <?php namespace App\Http\Controllers;
 
+use App\Messages;
+use App\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\View;
+
 class MessagesController extends Controller {
 
     public function index()
     {
-        return view('messages.index');
+        $mess = Messages::where('tuid', '=', Auth::id())->orderBy('seen', 'asc')->orderBy('sentat', 'desc')->get();
+
+        return view('messages.index', array('mess' => $mess));
     }
 
     public function read()
