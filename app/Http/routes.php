@@ -2,19 +2,22 @@
 
 use Illuminate\Support\Facades\Redirect;
 use App\User;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PagesController@index');
-
-Route::get('/messages', 'MessagesController@index');
-Route::get('/messages/read/{id}', 'MessagesController@read');
-Route::get('/messages/new', 'MessagesController@newMessage');
-Route::post('/messages/reply', 'MessagesController@reply');
-Route::post('/messages/send', 'MessagesController@send');
 
 Route::group(array('middleware' => 'auth'), function(){
 
     Route::get('/bank', 'BankController@index');
     Route::get('/burnerShop', 'BurnerShopController@index');
+    Route::get('/messages', 'MessagesController@index');
+    Route::get('/messages/read/{id}', 'MessagesController@read');
+    Route::get('/messages/new', 'MessagesController@newMessage');
+    Route::get('/forum', 'ForumController@index');
+
+    Route::post('/messages/reply', 'MessagesController@reply');
+    Route::post('/messages/send', 'MessagesController@send');
+    Route::post('/forum/start-discussion', 'ForumController@startDiscussion');
 
     Route::group(array('middleware' => 'isAdmin'), function(){
         Route::get('/admin', function(){
@@ -39,3 +42,5 @@ Route::get('/messages/searchusers', function() {
 
     return Response::json($in);
 });
+
+//test
