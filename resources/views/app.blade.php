@@ -68,11 +68,11 @@
                     <!-- <a href="/profile" class="list-group-item">Profil</a> -->
                     <!-- <a href="/gang" class="list-group-item">Gäng</a> -->
                     <a href="/" class="list-group-item {{ Request::is('/*') ? 'active' : '' }}">Nyheter</a>
-                    <a href="/messages" class="list-group-item {{ Request::is('/messages*') ? 'active' : '' }}">Meddelanden</a>
+                    <a href="/messages" class="list-group-item {{ Request::is('messages*') ? 'active' : '' }}">Meddelanden</a>
                     <!-- <a href="/chat" class="list-group-item">Chatt</a> -->
                     <!-- <a href="/forum" class="list-group-item">Forum</a> -->
                     <!-- <a href="/internet" class="list-group-item">Internet</a> -->
-                    <a href="/bank" class="list-group-item {{ Request::is('/bank*') ? 'active' : '' }}">Banken</a>
+                    <a href="/bank" class="list-group-item {{ Request::is('bank*') ? 'active' : '' }}">Banken</a>
                     <!-- <a href="/casino" class="list-group-item">Kasino</a> -->
                     <!-- <a href="/weaponStore" class="list-group-item">Vapengallerian</a> -->
                     <!-- <a href="/armorStore" class="list-group-item">Skyddsbutiken</a> -->
@@ -81,7 +81,7 @@
                     <!-- <a href="/liveMessages" class="list-group-item">Live meddelanden</a> -->
                     <!-- <a href="/smsServices" class="list-group-item">SMS-tjänster</a> -->
                     <!-- <a href="/warehouse" class="list-group-item">Lagerlokalen</a> -->
-                    <a href="/burnerShop" class="list-group-item {{ Request::is('/burnerShop*') ? 'active' : '' }}">Boden för brännare</a>
+                    <a href="/burnerShop" class="list-group-item {{ Request::is('burnerShop*') ? 'active' : '' }}">Boden för brännare</a>
                     <!-- <a href="/merchant" class="list-group-item">Grosshandlarn</a> -->
                     <!-- <a href="/mashBob" class="list-group-item">Mäskar-Lasse</a> -->
                     <!-- <a href="/laboratory" class="list-group-item">Brännarkammaren</a> -->
