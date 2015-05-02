@@ -7,8 +7,9 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="well well-sm">
-                            Messages
+                        <div class="list-group">
+                            <a href="#" class="list-group-item">Mitt Meddelande</a>
+                            <a href="#" class="list-group-item">Mitt Meddelande 2</a>
                         </div>
                     </div>
                 </div>
