@@ -1,4 +1,7 @@
 @extends('app')
+@section('stylesheets')
+<link href="/css/autocomplete.css" rel="stylesheet" />
+@endsection
 @section('content')
 <div class="row">
     <div class="col-md-12">
@@ -103,7 +106,7 @@
                                     <label class="control-label">Skicka pengar till</label>
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-user"></i> </span>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" id="reciever">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -121,4 +124,23 @@
         </div>
     </div>
 </div>
+@endsection
+@section('javascript')
+    <script type="text/javascript">
+        $( document ).ready(function() {
+            var availableTags = [
+                @foreach($users as $user)
+                "{{ $user['name'] }}",
+                @endforeach
+            ];
+
+            $( "#reciever" ).autocomplete({
+                source: availableTags,
+                messages: {
+                    noResults: '',
+                    results: function(){}
+                }
+            });
+        });
+    </script>
 @endsection

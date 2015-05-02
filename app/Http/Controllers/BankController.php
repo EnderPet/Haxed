@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Support\Facades\View;
 
 class BankController extends Controller {
@@ -8,7 +9,8 @@ class BankController extends Controller {
     }
 
     public function index(){
-        return view('bank');
+        $users = User::get();
+        return view('bank')->with(array('users' => $users));
     }
 
 }
