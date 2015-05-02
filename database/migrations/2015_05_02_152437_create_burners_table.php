@@ -17,6 +17,10 @@ class CreateBurnersTable extends Migration {
 		Schema::create('burners', function(Blueprint $table)
 		{
 			$table->increments('id');
+            $table->string('name');
+            $table->string('max_capacity');
+            $table->string('price');
+            $table->string('level_requirement');
 			$table->timestamps();
 		});
 	}
