@@ -24,16 +24,16 @@
             <input type="button" value="Send Message" class="form-control">
         </div>
     </form>
-@endsection
 
-<script style="text/javascript">
-    jQuery(document).ready(function() {
-        $("#autocomplete").autocomplete({
-            source: "searchusers",
-            minLength: 2,
-            select: function(event, ui) {
-                $("#m_tuid").val(ui.item.id);
-            }
+    <script style="text/javascript">
+        jQuery(document).ready(function() {
+            $("#autocomplete").autocomplete({
+                source: "searchusers",
+                minLength: 2,
+                select: function(event, ui) {
+                    $("#m_tuid").val(ui.item.id);
+                }
+            });
         });
-    });
-</script>
+    </script>
+@endsection
