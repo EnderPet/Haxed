@@ -1,5 +1,8 @@
 <?php namespace App\Http\Controllers;
 
+use App\Messages;
+use App\User;
+
 class MessagesController extends Controller {
 
     public function index()
