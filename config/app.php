@@ -2,6 +2,14 @@
 
 return [
 
+    /*
+     *
+     * Application in maintenance. Close registration.
+     *
+     * */
+
+    'maintenance' => true,
+
 	/*
 	|--------------------------------------------------------------------------
 	| Application Debug Mode
