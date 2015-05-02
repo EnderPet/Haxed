@@ -1,5 +1,6 @@
 @extends('app')
 @section('content')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <link media="all" type="text/css" rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
     <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 
@@ -24,8 +25,8 @@
         </div>
     </form>
 
-    <script style="text/javascript">
-        $(document).ready(function() {
+    <script style="text/javascript" onload="">
+        $(function() {
             $("#autocomplete").autocomplete({
                 source: "searchusers",
                 minLength: 2,
