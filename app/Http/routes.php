@@ -34,7 +34,7 @@ Route::get('/messages/searchusers', function() {
     $in = array();
 
     foreach($test as $t) {
-        $in[] = array('label' => $t->username, 'id' => $t->id);
+        $in[] = array('label' => $t->name, 'id' => $t->id);
     }
 
     return Response::json($in);
