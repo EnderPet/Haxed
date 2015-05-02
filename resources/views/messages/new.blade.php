@@ -25,8 +25,8 @@
     </form>
 
     <script style="text/javascript">
-        jQuery(document).ready(function() {
-            jQuery("#autocomplete").autocomplete({
+        $(document).ready(function() {
+            $("#autocomplete").autocomplete({
                 source: "searchusers",
                 minLength: 2,
                 select: function(event, ui) {
