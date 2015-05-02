@@ -5,6 +5,10 @@ use Illuminate\Support\Facades\Redirect;
 Route::get('/', 'PagesController@index');
 
 Route::get('/messages', 'MessagesController@index');
+Route::get('/messages/read/{id}', 'MessagesController@read');
+Route::get('/messages/new', 'MessagesController@newMessage');
+Route::post('/messages/reply', 'MessagesController@reply');
+Route::post('/messages/send', 'MessagesController@send');
 
 Route::group(array('middleware' => 'auth'), function(){
 
