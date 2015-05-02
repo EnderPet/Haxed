@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Redirect;
+use App\User;
 
 Route::get('/', 'PagesController@index');
 
