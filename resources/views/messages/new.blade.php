@@ -4,6 +4,18 @@
     <link media="all" type="text/css" rel="stylesheet" href="/css/jquery-ui.min.css">
     <script src="/js/jquery-ui.min.js"></script>
 
+    <script style="text/javascript" onload="">
+        $(function() {
+            $("#autocomplete").autocomplete({
+                source: "searchusers",
+                minLength: 2,
+                select: function(event, ui) {
+                    $("#m_tuid").val(ui.item.id);
+                }
+            });
+        });
+    </script>
+
     <form>
         <div class="form-group">
             <input type="text" name="touser" class="form-control" id="autocomplete" placeholder="Receiving Username*">
@@ -24,16 +36,4 @@
             <input type="button" value="Send Message" class="form-control">
         </div>
     </form>
-
-    <script style="text/javascript" onload="">
-        $(function() {
-            $("#autocomplete").autocomplete({
-                source: "searchusers",
-                minLength: 2,
-                select: function(event, ui) {
-                    $("#m_tuid").val(ui.item.id);
-                }
-            });
-        });
-    </script>
 @endsection
