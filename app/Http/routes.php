@@ -2,6 +2,8 @@
 
 Route::get('/', 'PagesController@index');
 
+Route::get('/messages', 'MessagesController@index');
+
 Route::group(array('middleware' => 'auth'), function(){
 
     Route::get('/bank', 'BankController@index');
