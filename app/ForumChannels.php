@@ -8,7 +8,7 @@ class ForumChannels extends Model {
 
     public function thread(){
 
-        return $this->hasMany('App\ForumThreads', 'channel', 'id');
+        return $this->hasMany('ForumThreads', 'channel', 'id');
 
     }
 

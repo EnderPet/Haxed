@@ -2,7 +2,6 @@ div.forum-body h5{
     font-size: 1.2em;
     font-weight: bold;
 }
-
 .start-discussion{
     margin:-3px 15px 0 15px;
     padding:3px 10px;
@@ -83,4 +82,14 @@ div.forum-nav ul li a:first-child{
 
 .forum-meta a{
     font-size: 1.5em;
+}
+
+.forum-channel{
+    float:left;
+}
+
+.text-muted.fpt {
+    display: block;
+    float: left;
+    margin-left: 5px;
 }

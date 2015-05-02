@@ -15,7 +15,7 @@ class CreateForumsTable extends Migration {
 	{
 		Schema::create('forum_threads', function(Blueprint $table)
 		{
-			$table->increments('id');
+			$table->increments('id')->unsigned();
             $table->integer('channel');
             $table->string('title');
             $table->text('content');
@@ -23,16 +23,11 @@ class CreateForumsTable extends Migration {
             $table->string('created_by');
             $table->string('updated_by');
 			$table->timestamps();
-
-            $table->foreign('id')
-                  ->references('forum_threads_id')
-                  ->on('forum_replies')
-                  ->onDelete('cascade');
 		});
 
         Schema::create('forum_replies', function(Blueprint $table){
             $table->increments('id');
-            $table->integer('forum_threads_id');
+            $table->integer('forum_threads_id')->unsigned();
             $table->text('content');
             $table->string('created_by');
             $table->timestamps();
@@ -42,6 +37,10 @@ class CreateForumsTable extends Migration {
             $table->increments('id');
             $table->string('name');
             $table->timestamps();
+        });
+
+        Schema::table('forum_replies', function(Blueprint $table){
+            $table->foreign('forum_threads_id')->references('id')->on('forum_threads')->onDelete('cascade');
         });
 	}
 

@@ -31,4 +31,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+    public function threads(){
+        $this->hasMany('App\ForumThreads', 'created_by', 'id');
+    }
+
 }
