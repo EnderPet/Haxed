@@ -12,6 +12,7 @@ Route::group(array('middleware' => 'auth'), function(){
     Route::get('/messages', 'MessagesController@index');
     Route::get('/messages/read/{id}', 'MessagesController@read');
     Route::get('/messages/new', 'MessagesController@newMessage');
+    Route::get('/forum', 'ForumController@index');
 
     Route::post('/messages/reply', 'MessagesController@reply');
     Route::post('/messages/send', 'MessagesController@send');

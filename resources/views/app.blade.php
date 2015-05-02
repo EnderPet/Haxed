@@ -70,7 +70,7 @@
                     <a href="/" class="list-group-item {{ Request::is('/*') ? 'active' : '' }}">Nyheter</a>
                     <a href="/messages" class="list-group-item {{ Request::is('messages*') ? 'active' : '' }}">Meddelanden</a>
                     <!-- <a href="/chat" class="list-group-item">Chatt</a> -->
-                    <!-- <a href="/forum" class="list-group-item">Forum</a> -->
+                    <a href="/forum" class="list-group-item {{ Request::is('forum*') ? 'active' : '' }}">Forum</a>
                     <!-- <a href="/internet" class="list-group-item">Internet</a> -->
                     <a href="/bank" class="list-group-item {{ Request::is('bank*') ? 'active' : '' }}">Banken</a>
                     <!-- <a href="/casino" class="list-group-item">Kasino</a> -->
