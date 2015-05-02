@@ -4,9 +4,9 @@ class MessagesController extends Controller {
 
     public function index()
     {
-        $mess = '';
+        $mess = Messages::where('tuid', '=', Auth::id())->orderBy('seen', 'asc')->orderBy('sentat', 'desc')->get();
 
-        return view('messages.index');
+        return view('messages.index', array('mess' => $mess));
     }
 
     public function read()
