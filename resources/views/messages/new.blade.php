@@ -27,7 +27,7 @@
 
     <script style="text/javascript">
         jQuery(document).ready(function() {
-            $("#autocomplete").autocomplete({
+            jQuery("#autocomplete").autocomplete({
                 source: "searchusers",
                 minLength: 2,
                 select: function(event, ui) {
