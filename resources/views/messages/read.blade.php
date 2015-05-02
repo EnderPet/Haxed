@@ -20,7 +20,7 @@
                 </form>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 well">
             <div class="">Hejsan<br/>hejsan<br/>heeeeeeeeeej<br/></div>
         </div>
     </div>
