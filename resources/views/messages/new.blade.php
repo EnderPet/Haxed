@@ -5,7 +5,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 
     <script style="text/javascript">
-        $(function() {
+        jQuery(document).ready(function() {
             $("#autocomplete").autocomplete({
                 source: "searchusers",
                 minLength: 2,
