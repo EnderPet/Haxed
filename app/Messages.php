@@ -6,6 +6,6 @@ class Messages extends Model {
 
     protected $table = 'messages';
 
-    protected $fillable = ['m_tuid', 'm_fuid', 'm_message', 'm_title'];
+    protected $fillable = ['tuid', 'fuid', 'message', 'title'];
 
 }
