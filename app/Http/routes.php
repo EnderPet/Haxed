@@ -27,3 +27,14 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::get('/messages/searchusers', function() {
+    $test = User::get();
+    $in = array();
+
+    foreach($test as $t) {
+        $in[] = array('label' => $t->username, 'id' => $t->id);
+    }
+
+    return Response::json($in);
+});
