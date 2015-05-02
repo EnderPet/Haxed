@@ -30,5 +30,7 @@ Route::get('/artisan', function()
     Artisan::call('migrate:refresh');
 
     //
+
+afdhöakfjhadfkljhl
 });
 */
