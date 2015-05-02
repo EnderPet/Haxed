@@ -9,7 +9,7 @@ Route::group(array('middleware' => 'auth'), function(){
 
     Route::group(array('middleware' => 'admin'), function(){
         Route::get('/admin', function(){
-           return "Admin!";
+           return "Admin!123";
         });
     });
 
