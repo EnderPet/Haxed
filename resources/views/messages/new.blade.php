@@ -2,7 +2,7 @@
 @section('content')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <link media="all" type="text/css" rel="stylesheet" href="/css/jquery-ui.min.css">
-    <script src="/js/jquery-ui.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
 
     <form>
         <div class="form-group">
