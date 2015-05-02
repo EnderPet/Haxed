@@ -8,6 +8,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Forum
+                    <button id="start-discussion" class="pull-right btn btn-primary btn-xs start-discussion">Starta Diskussion</button>
                     <form class="pull-right" style="width: 200px;">
                         <div class="input-group pull-right">
                             <span class="input-group-addon input-grp-xsm"><i class="fa fa-search"></i></span>
@@ -262,4 +263,61 @@
             </div>
         </div>
     </div>
+    <div class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                    <h4 class="modal-title">Starta en diskussion</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form" method="POST" action="{{ url('/forum/start-discussion') }}">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <div class="form-group">
+                            <label for="channel">Välj en kategori</label>
+                            <select class="form-control" name="channel">
+                                <option>Allmänt</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="title">Ge din diskussion en rubrik</label>
+                            <input type="text" class="form-control" name="title" value="{{ old('title') }}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="title">Och börja diskutera!</label>
+                            <textarea class="form-control no-resize" name="content" rows="10"></textarea>
+                        </div>
+                        @if($errors->forum_thread->first())
+                            <div class="alert alert-dismissable alert-danger">
+                                <button type="button" class="close" data-dismiss="alert">x</button>
+                                <strong>Hoppsan! Något blev fel.</strong>
+                                @foreach ($errors->forum_thread->all() as $error)
+                                    <p>{{ $error }}</p>
+                                @endforeach
+                            </div>
+                        @endif
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Skicka</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+@section('javascript')
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#start-discussion').on('click', function () {
+                $('.modal').modal('show');
+            });
+        });
+    </script>
+    @if($errors->forum_thread->first())
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('.modal').modal('show');
+            });
+        </script>
+    @endif
 @endsection

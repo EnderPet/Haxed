@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Redirect;
 use App\User;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PagesController@index');
 
@@ -16,6 +17,7 @@ Route::group(array('middleware' => 'auth'), function(){
 
     Route::post('/messages/reply', 'MessagesController@reply');
     Route::post('/messages/send', 'MessagesController@send');
+    Route::post('/forum/start-discussion', 'ForumController@startDiscussion');
 
     Route::group(array('middleware' => 'isAdmin'), function(){
         Route::get('/admin', function(){

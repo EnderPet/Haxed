@@ -3,6 +3,15 @@ div.forum-body h5{
     font-weight: bold;
 }
 
+.start-discussion{
+    margin:-3px 15px 0 15px;
+    padding:3px 10px;
+}
+
+.no-resize{
+    resize: none;
+}
+
 .btn-forum{
     padding: 0 6px;
     font-size: 11px;

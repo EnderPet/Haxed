@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Schema;
 
 class CreateForumTables extends Migration {
 
@@ -15,11 +16,12 @@ class CreateForumTables extends Migration {
 		Schema::create('forum_threads', function(Blueprint $table)
 		{
 			$table->increments('id');
+            $table->integer('channel');
             $table->string('title');
             $table->text('content');
             $table->integer('replies');
-            $table->integer('created_by');
-            $table->integer('updated_by');
+            $table->string('created_by');
+            $table->string('updated_by');
 			$table->timestamps();
 		});
 
@@ -27,7 +29,13 @@ class CreateForumTables extends Migration {
             $table->increments('id');
             $table->integer('forum_threads_id');
             $table->text('content');
-            $table->integer('created_by');
+            $table->string('created_by');
+            $table->timestamps();
+        });
+
+        Schema::create('forum_channels', function(Blueprint $table){
+            $table->increments('id');
+            $table->string('name');
             $table->timestamps();
         });
 	}
@@ -41,6 +49,7 @@ class CreateForumTables extends Migration {
 	{
         Schema::drop('forum_threads');
         Schema::drop('forum_replies');
+        Schema::drop('forum_channels');
 	}
 
 }
