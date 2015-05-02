@@ -19,9 +19,9 @@
                                 <div class="col-md-12">
                                     Här är mitt meddelande.
                                 </div>
-                                <div class="panel-footer">
-                                    Från >användare< klockan 18:18 den 20/4/2015
-                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                Från >användare< klockan 18:18 den 20/4/2015
                             </div>
                         </div>
                     </div>
