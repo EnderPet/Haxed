@@ -18,7 +18,7 @@
                                 <span class="date pull-right">Skrevs för 1 dag sedan</span>
                             </div>
                             <div class="discussion-body">
-                                {{ $thread->content }}
+                                {!! nl2br($thread->content) !!}
                             </div>
                             <div class="forum-meta">
                             </div>
@@ -31,7 +31,7 @@
                                 <span class="date pull-right">Skrevs för 1 dag sedan</span>
                             </div>
                             <div class="discussion-body">
-                                {{ $reply->content }}
+                                {!! nl2br($reply->content) !!}
                             </div>
                             <div class="forum-meta">
                             </div>
