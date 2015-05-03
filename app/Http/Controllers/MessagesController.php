@@ -44,7 +44,7 @@ class MessagesController extends Controller {
         $new->tuid = Input::get('tuid');
         $new->fuid = Auth::id();
         $new->title = Input::get('title');
-        $new->messages = Input::get('message');
+        $new->message = Input::get('message');
         $new->sentat = date('Y-m-d H:i:s');
         $new->seen = 0;
 
