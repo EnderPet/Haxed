@@ -20,7 +20,7 @@ class MessagesController extends Controller {
     public function read($id)
     {
         $mess = DB::table(DB::raw('messages as m inner join (SELECT id, name FROM users as touser) as u on u.id=m.tuid left join (SELECT id as id2, name as fruser FROM users) as u2 on u2.id2=m.fuid'))
-            ->where('id', '=', $id)
+            ->where('m.id', '=', $id)
             ->first();
 
         $update = Messages::where('id', '=', $id);
