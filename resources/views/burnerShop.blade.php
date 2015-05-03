@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Lagerlokalen</div>
+                    <div class="panel-heading">Boden för brännare</div>
                     <div class="panel-body">
                         <p class="text-warning">
                             För att kunna bränna sprit så behövs det såklart en brännare.<br />
@@ -23,11 +23,13 @@
                         <hr />
                         <table class="table table-bordered">
                             <thead>
-                            <th>Brännare</th>
-                            <th>Max Kapacitet</th>
-                            <th>Pris</th>
-                            <th>Nivåkrav</th>
-                            <th></th>
+                            <tr>
+                                <th>Brännare</th>
+                                <th>Max Kapacitet</th>
+                                <th>Pris</th>
+                                <th>Nivåkrav</th>
+                                <th></th>
+                            </tr>
                             </thead>
                             <tbody>
                             @foreach($burners as $burner)
@@ -44,11 +46,13 @@
                         <hr />
                         <table class="table table-bordered">
                             <thead>
-                            <th>Premium Brännare</th>
-                            <th>Max Kapacitet</th>
-                            <th>Pris</th>
-                            <th>Nivåkrav</th>
-                            <th></th>
+                            <tr>
+                                <th>Premium Brännare</th>
+                                <th>Max Kapacitet</th>
+                                <th>Pris</th>
+                                <th>Nivåkrav</th>
+                                <th></th>
+                            </tr>
                             </thead>
                             <tbody>
                             @foreach($premiumBurners as $burner)
@@ -57,7 +61,7 @@
                                     <td>{{ $burner->max_capacity }} L</td>
                                     <td>{{ $burner->price }} kr</td>
                                     <td>{{ $burner->level_requirement }}</td>
-                                    <td class="text-center"><a href="/burnerShop/{{ $burner->id }}">Köp</a> </td>
+                                    <td class="text-center"><a {{ ($user->premium_1 != 1) ? 'class=popup data-toggle=popover href=#' : 'href=/burnerShop/' . $burner->id }}>Köp</a> </td>
                                 </tr>
                             @endforeach
                             </tbody>
