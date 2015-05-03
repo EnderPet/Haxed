@@ -10,7 +10,7 @@ class Messages extends Model {
 
     public function user()
     {
-        return $this->belongsTo('User', 'fuid', 'id');
+        return $this->belongsTo('App\User', 'fuid', 'id');
     }
 
 }
