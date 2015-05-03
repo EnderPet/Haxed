@@ -1,18 +1,26 @@
 @extends('app')
 @section('content')
+    @if(Session::has('Errors'))
+        <div class="alert alert-danger">
+            <h4>Error!</h4>
+            {{ Session::get('Errors') }}
+        </div>
+    @endif
     <div class="row">
         <div class="col-md-6">
             <div class="" style="overflow:hidden;">
-                <div class="" style="float:left;">Title: Mitt Meddelande<br/>From: MyUser</div>
-                <div class="" style="float:right;">2015-04-02<br/>16:27:00</div>
+                <div class="" style="float:left;">Title: {{ $mess->title }}<br/>From: {{ $mess->fruser }}</div>
+                <div class="" style="float:right;">{{ $mess->date['date'] }}<br/>{{ $mess->date['time'] }}</div>
             </div>
             <div class="">
-                <form>
+                <form role="form" method="POST" action="/messages/reply">
                     <div class="form-group">
-                        <input type="text" class="form-control">
+                        <input type="hidden" name="fuid" value="{{ $mess->tuid }}">
+                        <input type="hidden" name="tuid" value="{{ $mess->fuid }}">
+                        <input type="hidden" name="title" value="{{ $mess->title }}">
                     </div>
                     <div class="form-group">
-                        <textarea rows="4" cols="50" class="form-control"></textarea>
+                        <textarea rows="4" cols="50" name="message" class="form-control"></textarea>
                     </div>
                     <div class="form-group">
                         <input type="submit" value="Reply" class="form-control">
