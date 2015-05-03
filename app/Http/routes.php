@@ -10,6 +10,7 @@ Route::group(array('middleware' => 'auth'), function(){
 
     Route::get('/bank', 'BankController@index');
     Route::get('/burnerShop', 'BurnerShopController@index');
+    Route::get('/burnerShop/{id}', 'BurnerShopController@buy');
     Route::get('/messages', 'MessagesController@index');
     Route::get('/messages/read/{id}', 'MessagesController@read');
     Route::get('/messages/new', 'MessagesController@newMessage');

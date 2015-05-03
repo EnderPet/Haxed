@@ -35,4 +35,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         $this->hasMany('App\ForumThreads', 'created_by', 'id');
     }
 
+    public function burner(){
+        return $this->hasOne('App\Burner', 'id', 'burner_id');
+    }
+
 }

@@ -11,6 +11,15 @@
                             Om du vill öka dina inkomster så får du jobba dig upp till en dyrare brännare.<br />
                             Tänk på att de billigare brännarna går sönder snabbare än de dyrare.
                         </p>
+                        @if(Session::has('burnerShopFailed'))
+                            <p class="alert alert-danger">
+                                {{ Session::get('burnerShopFailed') }}
+                            </p>
+                        @elseif(Session::has('burnerShopSuccess'))
+                            <p class="alert alert-success">
+                                {{ Session::get('burnerShopSuccess') }}
+                            </p>
+                        @endif
                         <hr />
                         <table class="table table-bordered">
                             <thead>
@@ -21,13 +30,15 @@
                             <th></th>
                             </thead>
                             <tbody>
+                            @foreach($burners as $burner)
                             <tr>
-                                <td>Cykelslangar och dunk</td>
-                                <td>20 L</td>
-                                <td>8000 kr</td>
-                                <td>1</td>
-                                <td class="text-center"><a href="#">Köp</a> </td>
+                                <td>{{ $burner->name }}</td>
+                                <td>{{ $burner->max_capacity }} L</td>
+                                <td>{{ $burner->price }} kr</td>
+                                <td>{{ $burner->level_requirement }}</td>
+                                <td class="text-center"><a href="/burnerShop/{{ $burner->id }}">Köp</a> </td>
                             </tr>
+                            @endforeach
                             </tbody>
                         </table>
                         <hr />

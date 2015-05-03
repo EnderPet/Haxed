@@ -1,6 +1,9 @@
 <?php namespace App\Http\Controllers;
 
+use App\Burner;
+use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
 class BurnerShopController extends Controller {
@@ -9,7 +12,30 @@ class BurnerShopController extends Controller {
     }
 
     public function index(){
-        return view('burnerShop');
+        $burners = Burner::orderBy('price', 'DESC')->get();
+        return view('burnerShop')->with(array('burners' => $burners));
+    }
+
+    public function buy($id){
+        $user = User::find(Auth::id());
+        $burner = Burner::find($id);
+
+        if($burner->id != $user->burner_id){
+            if($burner->price < $user->money){
+                if($burner->premium == 1){
+                    if($user->premium_1 == 0){
+                        return Redirect::back()->with(array('burnerShopFailed' => 'Du måste ha premium för denna brännare.'));
+                    }
+                }
+                $user->money -= $burner->price;
+                $user->burner_id = $burner->id;
+                $user->save();
+                return Redirect::back()->with(array('burnerShopSuccess' => 'Köpet lyckades!'));
+            }
+            return Redirect::back()->with(array('burnerShopFailed' => 'Du har inte råd med denna brännare.'));
+        }
+        return Redirect::back()->with(array('burnerShopFailed' => 'Du har redan denna brännare.'));
+
     }
 
 }

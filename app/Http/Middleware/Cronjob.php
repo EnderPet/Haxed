@@ -12,7 +12,7 @@ class Cronjob {
     public function __construct()
     {
         if(Auth::check()){
-            View::share('user', Auth::user());
+            View::share('user', User::find(Auth::id()));
         }
     }
 

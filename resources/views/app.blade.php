@@ -59,6 +59,11 @@
                                 <span class="progress-value">Experience {{ $user->exp }} / {{ $user->max_exp }}</span>
                             </div>
                         </div>
+                        <span class="clearfix">Brännare: {{ $user->burner()->first()->name }}</span>
+                        <span class="clearfix">Lagerlokal: {{ $user->warehouse_id }}</span>
+                        <span class="clearfix">Vapen: {{ $user->weapon_id }}</span>
+                        <span class="clearfix">Skydd: {{ $user->armor_id }}</span>
+                        <span class="clearfix">Amulett: {{ $user->amulet_id }}</span>
                         <hr />
                         <a href="/auth/logout" class="btn btn-default btn-block">Logga ut</a>
                     </div>
