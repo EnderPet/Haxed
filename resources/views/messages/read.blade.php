@@ -18,6 +18,7 @@
                         <input type="hidden" name="fuid" value="{{ $mess->tuid }}">
                         <input type="hidden" name="tuid" value="{{ $mess->fuid }}">
                         <input type="hidden" name="title" value="{{ $mess->title }}">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     </div>
                     <div class="form-group">
                         <textarea rows="4" cols="50" name="message" class="form-control"></textarea>
