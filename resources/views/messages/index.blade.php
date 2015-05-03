@@ -22,7 +22,7 @@
                             <a href="/messages/read/1" class="list-group-item">Mitt Meddelande 2 <span class="pull-right">From: MyUser</span></a>
                         </div>
                     </div>
-                    <div class="col-md-12">{{ var_dump($mess) }}
+                    <div class="col-md-12">
                         {{ $mess->render() }}
                     </div>
                 </div>
