@@ -1,6 +1,6 @@
 @extends('app')
 @section('content')
 
-    Profile View of user {{ $user->name }}
+    Profile View of user {{ $profiledata->name }}
 
 @endsection
