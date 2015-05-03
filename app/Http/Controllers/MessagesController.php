@@ -4,6 +4,7 @@ use App\Messages;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Input;
 
 class MessagesController extends Controller {
 
