@@ -17,6 +17,7 @@
 
             <input type="hidden" name="fuid" value="{{ Auth::user()->id }}">
             <input type="hidden" name="tuid" id="m_tuid">
+            <input type="hidden" name="_token" value="{{{ csrf_token() }}}"
         </div>
 
         <div class="form-group">
