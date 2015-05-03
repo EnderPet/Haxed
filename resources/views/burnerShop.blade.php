@@ -51,13 +51,15 @@
                             <th></th>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>Powerstormer v5.341</td>
-                                <td>565.000 L</td>
-                                <td>4 950 000 000 kr</td>
-                                <td>850</td>
-                                <td class="text-center"><a href="#" class="popup">Köp</a> </td>
-                            </tr>
+                            @foreach($premiumBurners as $burner)
+                                <tr>
+                                    <td>{{ $burner->name }}</td>
+                                    <td>{{ $burner->max_capacity }} L</td>
+                                    <td>{{ $burner->price }} kr</td>
+                                    <td>{{ $burner->level_requirement }}</td>
+                                    <td class="text-center"><a href="/burnerShop/{{ $burner->id }}">Köp</a> </td>
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>

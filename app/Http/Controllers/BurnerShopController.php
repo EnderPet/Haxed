@@ -12,8 +12,9 @@ class BurnerShopController extends Controller {
     }
 
     public function index(){
-        $burners = Burner::orderBy('price', 'DESC')->get();
-        return view('burnerShop')->with(array('burners' => $burners));
+        $burners = Burner::where('id', '>', '0')->where('premium', '=', '0')->orderBy('price', 'DESC')->get();
+        $premiumBurners = Burner::where('id', '>', '0')->where('premium', '=', '1')->orderBy('price', 'DESC')->get();
+        return view('burnerShop')->with(array('burners' => $burners, 'premiumBurners' => $premiumBurners));
     }
 
     public function buy($id){
