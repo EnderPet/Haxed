@@ -9,7 +9,7 @@ class MessagesController extends Controller {
 
     public function index()
     {
-        $mess = Messages::where('tuid', '=', Auth::id())->orderBy('seen', 'asc')->orderBy('sentat', 'desc')->get();
+        $mess = Messages::where('tuid', '=', Auth::id())->orderBy('seen', 'asc')->orderBy('sentat', 'desc')->paginate(10);
 
         return view('messages.index', array('mess' => $mess));
     }
