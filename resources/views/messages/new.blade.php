@@ -5,20 +5,20 @@
 @endsection
 
 @section('content')
-    <form>
+    <form role="form" method="POST" action="/messages/send">
         <div class="form-group">
             <input type="text" name="touser" class="form-control" id="autocomplete" placeholder="Receiving Username*">
 
-            <input type="hidden" name="m_fuid" value="{{ Auth::user()->id }}">
-            <input type="hidden" name="m_tuid" id="m_tuid">
+            <input type="hidden" name="fuid" value="{{ Auth::user()->id }}">
+            <input type="hidden" name="tuid" id="m_tuid">
         </div>
 
         <div class="form-group">
-            <input type="text" name="m_title" class="form-control" placeholder="Message Subject*">
+            <input type="text" name="title" class="form-control" placeholder="Message Subject*">
         </div>
 
         <div class="form-group">
-            <textarea rows="4" cols="50" name="m_message" class="form-control"></textarea>
+            <textarea rows="4" cols="50" name="message" class="form-control"></textarea>
         </div>
 
         <div class="form-group">
