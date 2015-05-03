@@ -8,4 +8,9 @@ class Messages extends Model {
 
     protected $fillable = ['tuid', 'fuid', 'message', 'title'];
 
+    public function user()
+    {
+        return $this->belongsTo('User', 'fuid', 'id');
+    }
+
 }
