@@ -11,7 +11,7 @@ class MessagesController extends Controller {
 
     public function index()
     {
-        $mess = Messages::where('tuid', '=', Auth::id())->orderBy('seen', 'asc')->orderBy('sentat', 'desc')->user()->paginate(10);
+        $mess = Messages::where('tuid', '=', Auth::id())->orderBy('seen', 'asc')->orderBy('sentat', 'desc')->users()->paginate(10);
 
         return view('messages.index', array('mess' => $mess));
     }

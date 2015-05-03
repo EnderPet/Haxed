@@ -8,7 +8,7 @@ class Messages extends Model {
     public $timestamps = false;
     protected $fillable = ['tuid', 'fuid', 'message', 'title'];
 
-    public function user()
+    public function users()
     {
         return $this->belongsTo('App\User', 'fuid', 'id');
     }
