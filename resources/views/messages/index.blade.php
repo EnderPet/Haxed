@@ -9,11 +9,14 @@
                     <div class="col-md-12">
                         <div class="list-group">
                             @foreach($mess as $m)
-                                <a href="/messages/read/{{ $m->id }}">{{ $m->title }} <span class="pull-right">From: {{ $m->fuid }}</span></a>
+                                <a href="/messages/read/{{ $m->id }}">{{ $m->title }}{{ $m->seen == 0 ? '<span class="label label-primary">New</span>' : '' }} <span class="pull-right">From: {{ $m->fuid }}</span></a>
                             @endforeach
                             <a href="/messages/read/1" class="list-group-item">Mitt Meddelande <span class="pull-right">From: MyUser</span></a>
                             <a href="/messages/read/1" class="list-group-item">Mitt Meddelande 2 <span class="pull-right">From: MyUser</span></a>
                         </div>
+                    </div>
+                    <div class="col-md-12">
+                        {{ $mess->links() }}
                     </div>
                 </div>
             </div>
