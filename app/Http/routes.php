@@ -14,6 +14,8 @@ Route::group(array('middleware' => 'auth'), function(){
     Route::get('/messages/read/{id}', 'MessagesController@read');
     Route::get('/messages/new', 'MessagesController@newMessage');
     Route::get('/forum', 'ForumController@index');
+    Route::get('/profile', 'ProfileController@profile');
+    Route::get('/profile/show/{id}', 'ProfileController@show');
 
     Route::post('/messages/reply', 'MessagesController@reply');
     Route::post('/messages/send', 'MessagesController@send');
