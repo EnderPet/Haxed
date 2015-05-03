@@ -8,13 +8,13 @@ class ProfileController extends Controller {
     public function profile()
     {
         $user = User::find(Auth::id());
-        return view('profile.profile', array('user' => $user));
+        return view('profile.profile', array('userdata' => $user));
     }
 
     public function show($id)
     {
         $user = User::find($id);
-        return view('profile.profile', array('user' => $user));
+        return view('profile.profile', array('userdata' => $user));
     }
 
     public function edit()
