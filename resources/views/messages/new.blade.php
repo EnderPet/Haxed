@@ -28,7 +28,7 @@
         </div>
 
         <div class="form-group">
-            <input type="button" value="Send Message" class="form-control">
+            <input type="submit" value="Send Message" class="form-control">
         </div>
     </form>
 @endsection
