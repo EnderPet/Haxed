@@ -93,3 +93,13 @@ div.forum-nav ul li a:first-child{
     float: left;
     margin-left: 5px;
 }
+
+.discussion-header{
+    margin: 15px 0;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #262a2d;
+    line-height: 1.2em;
+}
+
+.discussion-header > .author{
+}
