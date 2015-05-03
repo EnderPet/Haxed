@@ -34,7 +34,19 @@ class MessagesController extends Controller {
 
     public function reply()
     {
+        $reply = new Messages;
+        $reply->tuid = Input::get('tuid');
+        $reply->fuid = Input::get('fuid');
+        $reply->title = Input::get('title');
+        $reply->message = Input::get('message');
+        $reply->sentat = date('Y-m-d H:i:s');
+        $reply->seen = 0;
 
+        if($reply->save()) {
+            return Redirect::to('/messages/')->withSuccess('Message Sent.');
+        } else {
+            return Redirect::back()->withInput()->with('Errors', 'Message could not be sent.');
+        }
     }
 
     public function newMessage()
