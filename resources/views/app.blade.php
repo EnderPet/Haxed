@@ -65,7 +65,7 @@
                 </div>
 
                 <div class="list-group">
-                    <!-- <a href="/profile" class="list-group-item">Profil</a> -->
+                    <a href="/profile" class="list-group-item {{ Request::is('profile') ? 'active' : '' }}">Profil</a>
                     <!-- <a href="/gang" class="list-group-item">Gäng</a> -->
                     <a href="/" class="list-group-item {{ Request::is('/*') ? 'active' : '' }}">Nyheter</a>
                     <a href="/messages" class="list-group-item {{ Request::is('messages*') ? 'active' : '' }}">Meddelanden {!! App\Messages::where(DB::raw('tuid='.Auth::id().' and seen'), '0')->count() == 0 ? '' : '<span class="badge">'.App\Messages::where(DB::raw('tuid='.Auth::id().' and seen'), '0')->count().'</span>' !!}</a>
