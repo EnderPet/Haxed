@@ -27,226 +27,36 @@
                         </ul>
                     </div>
                     <div class="forum-wrap">
+                        @foreach($threads as $thread)
+                            <?php
+                            $t1 = new DateTime($thread->updated_at);
+                            $t2 = new DateTime('now');
+                            $time = $t1->diff($t2);
+
+                                if($time->days > 0){
+                                    $timeprint = $thread->updated_at;
+                                } elseif($time->days == 0 && $time->h > 0){
+                                    if($time->h == 1){
+                                        $timeprint = "för " . $time->h . " timme sedan";
+                                    } else {
+                                        $timeprint = "för " . $time->h . " timmar sedan";
+                                    }
+                                } else {
+                                    $timeprint = "för " . $time->i . " minuter sedan";
+                                }
+                            ?>
                         <article>
                             <div class="forum-body">
-                                <a href="#"><h5>Här är din första tråd i detta forum</h5></a>
-                                <a href="#" class="btn btn-primary btn-forum disabled">Allmänt</a> <span class="text-muted">Senaste aktivitet var för 3 minuter sedan av <a href="#">Asdfowkw</a></span>
+                                <a href="#"><h5>{{ $thread->title }}</h5></a>
+                                    <a href="#" class="forum-channel btn btn-{{ ($thread->channel == 1 ? "primary" : ($thread->channel == 2 ? "warning" : ($thread->channel == 3 ? "danger" : "default"))) }} btn-forum disabled">{{ $thread->channel()->first()->name }}</a> <span class="text-muted fpt">Senaste aktivitet var {{ $timeprint }} av <a href="#">{{ $thread->user()->first()->name }}</a></span>
                             </div>
                             <div class="forum-meta">
                                 <span class="replies">
-                                    <a href="#" class="clearfix">6 st</a><span class="text-muted">Svar</span>
+                                    <a href="#" class="clearfix">{{ $thread->replies }} st</a><span class="text-muted">Svar</span>
                                 </span>
                             </div>
                         </article>
-                        <article>
-                            <div class="forum-body">
-                                <h5>Här är din första tråd i detta forum</h5>
-                                <a href="#" class="btn btn-success btn-forum disabled">Mina Diskussioner</a> <span class="text-muted">Senaste aktivitet var för 3 minuter sedan av <a href="#">Asdfowkw</a></span>
-                            </div>
-                            <div class="forum-meta">
-                                <span class="replies">
-                                    <a href="#" class="clearfix">6 st</a><span class="text-muted">Svar</span>
-                                </span>
-                            </div>
-                        </article>
-                        <article>
-                            <div class="forum-body">
-                                <h5>Här är din första tråd i detta forum</h5>
-                                <a href="#" class="btn btn-warning btn-forum disabled">Gängrelaterat</a> <span class="text-muted">Senaste aktivitet var för 3 minuter sedan av <a href="#">Asdfowkw</a></span>
-                            </div>
-                            <div class="forum-meta">
-                                <span class="replies">
-                                    <a href="#" class="clearfix">6 st</a><span class="text-muted">Svar</span>
-                                </span>
-                            </div>
-                        </article>
-                        <article>
-                            <div class="forum-body">
-                                <h5>Här är din första tråd i detta forum</h5>
-                                <a href="#" class="btn btn-danger btn-forum disabled">Förslag</a> <span class="text-muted">Senaste aktivitet var för 3 minuter sedan av <a href="#">Asdfowkw</a></span>
-                            </div>
-                            <div class="forum-meta">
-                                <span class="replies">
-                                    <a href="#" class="clearfix">6 st</a><span class="text-muted">Svar</span>
-                                </span>
-                            </div>
-                        </article>
-                        <article>
-                            <div class="forum-body">
-                                <h5>Här är din första tråd i detta forum</h5>
-                                <a href="#" class="btn btn-primary btn-forum disabled">Allmänt</a> <span class="text-muted">Senaste aktivitet var för 3 minuter sedan av <a href="#">Asdfowkw</a></span>
-                            </div>
-                            <div class="forum-meta">
-                                <span class="replies">
-                                    <a href="#" class="clearfix">6 st</a><span class="text-muted">Svar</span>
-                                </span>
-                            </div>
-                        </article>
-                        <article>
-                            <div class="forum-body">
-                                <h5>Här är din första tråd i detta forum</h5>
-                                <a href="#" class="btn btn-success btn-forum disabled">Mina Diskussioner</a> <span class="text-muted">Senaste aktivitet var för 3 minuter sedan av <a href="#">Asdfowkw</a></span>
-                            </div>
-                            <div class="forum-meta">
-                                <span class="replies">
-                                    <a href="#" class="clearfix">6 st</a><span class="text-muted">Svar</span>
-                                </span>
-                            </div>
-                        </article>
-                        <article>
-                            <div class="forum-body">
-                                <h5>Här är din första tråd i detta forum</h5>
-                                <a href="#" class="btn btn-warning btn-forum disabled">Gängrelaterat</a> <span class="text-muted">Senaste aktivitet var för 3 minuter sedan av <a href="#">Asdfowkw</a></span>
-                            </div>
-                            <div class="forum-meta">
-                                <span class="replies">
-                                    <a href="#" class="clearfix">6 st</a><span class="text-muted">Svar</span>
-                                </span>
-                            </div>
-                        </article>
-                        <article>
-                            <div class="forum-body">
-                                <h5>Här är din första tråd i detta forum</h5>
-                                <a href="#" class="btn btn-danger btn-forum disabled">Förslag</a> <span class="text-muted">Senaste aktivitet var för 3 minuter sedan av <a href="#">Asdfowkw</a></span>
-                            </div>
-                            <div class="forum-meta">
-                                <span class="replies">
-                                    <a href="#" class="clearfix">6 st</a><span class="text-muted">Svar</span>
-                                </span>
-                            </div>
-                        </article>
-                        <article>
-                            <div class="forum-body">
-                                <h5>Här är din första tråd i detta forum</h5>
-                                <a href="#" class="btn btn-warning btn-forum disabled">Gängrelaterat</a> <span class="text-muted">Senaste aktivitet var för 3 minuter sedan av <a href="#">Asdfowkw</a></span>
-                            </div>
-                            <div class="forum-meta">
-                                <span class="replies">
-                                    <a href="#" class="clearfix">6 st</a><span class="text-muted">Svar</span>
-                                </span>
-                            </div>
-                        </article>
-                        <article>
-                            <div class="forum-body">
-                                <h5>Här är din första tråd i detta forum</h5>
-                                <a href="#" class="btn btn-danger btn-forum disabled">Förslag</a> <span class="text-muted">Senaste aktivitet var för 3 minuter sedan av <a href="#">Asdfowkw</a></span>
-                            </div>
-                            <div class="forum-meta">
-                                <span class="replies">
-                                    <a href="#" class="clearfix">6 st</a><span class="text-muted">Svar</span>
-                                </span>
-                            </div>
-                        </article>
-                        <article>
-                            <div class="forum-body">
-                                <h5>Här är din första tråd i detta forum</h5>
-                                <a href="#" class="btn btn-primary btn-forum disabled">Allmänt</a> <span class="text-muted">Senaste aktivitet var för 3 minuter sedan av <a href="#">Asdfowkw</a></span>
-                            </div>
-                            <div class="forum-meta">
-                                <span class="replies">
-                                    <a href="#" class="clearfix">6 st</a><span class="text-muted">Svar</span>
-                                </span>
-                            </div>
-                        </article>
-                        <article>
-                            <div class="forum-body">
-                                <h5>Här är din första tråd i detta forum</h5>
-                                <a href="#" class="btn btn-success btn-forum disabled">Mina Diskussioner</a> <span class="text-muted">Senaste aktivitet var för 3 minuter sedan av <a href="#">Asdfowkw</a></span>
-                            </div>
-                            <div class="forum-meta">
-                                <span class="replies">
-                                    <a href="#" class="clearfix">6 st</a><span class="text-muted">Svar</span>
-                                </span>
-                            </div>
-                        </article>
-                        <article>
-                            <div class="forum-body">
-                                <h5>Här är din första tråd i detta forum</h5>
-                                <a href="#" class="btn btn-warning btn-forum disabled">Gängrelaterat</a> <span class="text-muted">Senaste aktivitet var för 3 minuter sedan av <a href="#">Asdfowkw</a></span>
-                            </div>
-                            <div class="forum-meta">
-                                <span class="replies">
-                                    <a href="#" class="clearfix">6 st</a><span class="text-muted">Svar</span>
-                                </span>
-                            </div>
-                        </article>
-                        <article>
-                            <div class="forum-body">
-                                <h5>Här är din första tråd i detta forum</h5>
-                                <a href="#" class="btn btn-danger btn-forum disabled">Förslag</a> <span class="text-muted">Senaste aktivitet var för 3 minuter sedan av <a href="#">Asdfowkw</a></span>
-                            </div>
-                            <div class="forum-meta">
-                                <span class="replies">
-                                    <a href="#" class="clearfix">6 st</a><span class="text-muted">Svar</span>
-                                </span>
-                            </div>
-                        </article>
-                        <article>
-                            <div class="forum-body">
-                                <h5>Här är din första tråd i detta forum</h5>
-                                <a href="#" class="btn btn-primary btn-forum disabled">Allmänt</a> <span class="text-muted">Senaste aktivitet var för 3 minuter sedan av <a href="#">Asdfowkw</a></span>
-                            </div>
-                            <div class="forum-meta">
-                                <span class="replies">
-                                    <a href="#" class="clearfix">6 st</a><span class="text-muted">Svar</span>
-                                </span>
-                            </div>
-                        </article>
-                        <article>
-                            <div class="forum-body">
-                                <h5>Här är din första tråd i detta forum</h5>
-                                <a href="#" class="btn btn-success btn-forum disabled">Mina Diskussioner</a> <span class="text-muted">Senaste aktivitet var för 3 minuter sedan av <a href="#">Asdfowkw</a></span>
-                            </div>
-                            <div class="forum-meta">
-                                <span class="replies">
-                                    <a href="#" class="clearfix">6 st</a><span class="text-muted">Svar</span>
-                                </span>
-                            </div>
-                        </article>
-                        <article>
-                            <div class="forum-body">
-                                <h5>Här är din första tråd i detta forum</h5>
-                                <a href="#" class="btn btn-warning btn-forum disabled">Gängrelaterat</a> <span class="text-muted">Senaste aktivitet var för 3 minuter sedan av <a href="#">Asdfowkw</a></span>
-                            </div>
-                            <div class="forum-meta">
-                                <span class="replies">
-                                    <a href="#" class="clearfix">6 st</a><span class="text-muted">Svar</span>
-                                </span>
-                            </div>
-                        </article>
-                        <article>
-                            <div class="forum-body">
-                                <h5>Här är din första tråd i detta forum</h5>
-                                <a href="#" class="btn btn-danger btn-forum disabled">Förslag</a> <span class="text-muted">Senaste aktivitet var för 3 minuter sedan av <a href="#">Asdfowkw</a></span>
-                            </div>
-                            <div class="forum-meta">
-                                <span class="replies">
-                                    <a href="#" class="clearfix">6 st</a><span class="text-muted">Svar</span>
-                                </span>
-                            </div>
-                        </article>
-                        <article>
-                            <div class="forum-body">
-                                <h5>Här är din första tråd i detta forum</h5>
-                                <a href="#" class="btn btn-warning btn-forum disabled">Gängrelaterat</a> <span class="text-muted">Senaste aktivitet var för 3 minuter sedan av <a href="#">Asdfowkw</a></span>
-                            </div>
-                            <div class="forum-meta">
-                                <span class="replies">
-                                    <a href="#" class="clearfix">6 st</a><span class="text-muted">Svar</span>
-                                </span>
-                            </div>
-                        </article>
-                        <article>
-                            <div class="forum-body">
-                                <h5>Här är din första tråd i detta forum</h5>
-                                <a href="#" class="btn btn-danger btn-forum disabled">Förslag</a> <span class="text-muted">Senaste aktivitet var för 3 minuter sedan av <a href="#">Asdfowkw</a></span>
-                            </div>
-                            <div class="forum-meta">
-                                <span class="replies">
-                                    <a href="#" class="clearfix">6 st</a><span class="text-muted">Svar</span>
-                                </span>
-                            </div>
-                        </article>
+                        @endforeach
                     </div>
                     <div class="col-md-12 text-center">
                         <ul class="pagination pagination-sm">
@@ -276,7 +86,9 @@
                         <div class="form-group">
                             <label for="channel">Välj en kategori</label>
                             <select class="form-control" name="channel">
-                                <option>Allmänt</option>
+                                @foreach($channels as $channel)
+                                    <option value="{{ $channel->id }}">{{ $channel->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group">
