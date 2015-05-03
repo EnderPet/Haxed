@@ -1,6 +1,13 @@
 @extends('app')
 @section('content')
 
+    @if(Session::has('success'))
+        <div class="alert alert-success">
+            <h4>Success!</h4>
+            {{ Session::get('success') }}
+        </div>
+    @endif
+
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">Messages <span class="pull-right"><a href="/messages/new">New Message</a></span></div>

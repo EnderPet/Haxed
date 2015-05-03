@@ -5,6 +5,12 @@
 @endsection
 
 @section('content')
+    @if(Session::has('Errors'))
+        <div class="alert alert-danger">
+            <h4>Error</h4>
+            {{ Session::get('Errors') }}
+        </div>
+    @endif
     <form role="form" method="POST" action="/messages/send">
         <div class="form-group">
             <input type="text" name="touser" class="form-control" id="autocomplete" placeholder="Receiving Username*">
