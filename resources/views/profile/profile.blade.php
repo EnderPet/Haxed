@@ -5,7 +5,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">Profile of {{ $profiledata->name }}</div>
             <div class="panel-body">
-
+                Profile stuff goes here..
             </div>
         </div>
     </div>
