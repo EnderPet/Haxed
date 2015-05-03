@@ -36,7 +36,7 @@ class MessagesController extends Controller {
         //    return Redirect::back()->withInput()->with('Errors', 'You cannot send a messages to yourself.');
         //}
 
-        if(Input::get('title') == null || Input::get('title') == '' || isEmpty(Input::get('title'))) {
+        if(Input::get('title') == null || Input::get('title') == '') {
             return Redirect::back()->withInput()->with('Errors', 'You can to specify a subject.');
         }
 
