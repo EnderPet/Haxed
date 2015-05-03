@@ -16,7 +16,7 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                        {{ $mess->links() }}
+                        {{ $mess->render() }}
                     </div>
                 </div>
             </div>
