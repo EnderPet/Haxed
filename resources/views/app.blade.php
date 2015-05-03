@@ -68,7 +68,7 @@
                     <!-- <a href="/profile" class="list-group-item">Profil</a> -->
                     <!-- <a href="/gang" class="list-group-item">Gäng</a> -->
                     <a href="/" class="list-group-item {{ Request::is('/*') ? 'active' : '' }}">Nyheter</a>
-                    <a href="/messages" class="list-group-item {{ Request::is('messages*') ? 'active' : '' }}">Meddelanden</a>
+                    <a href="/messages" class="list-group-item {{ Request::is('messages*') ? 'active' : '' }}">Meddelanden {!! Messages::where(DB::raw('tuid='.Auth::id().' and seen'), '0')->count() == 0 ? '' : '<span class="badge">'.Messages::where(DB::raw('tuid='.Auth::id().' and seen'), '0')->count().'</span>' !!}</a>
                     <!-- <a href="/chat" class="list-group-item">Chatt</a> -->
                     <a href="/forum" class="list-group-item {{ Request::is('forum*') ? 'active' : '' }}">Forum</a>
                     <!-- <a href="/internet" class="list-group-item">Internet</a> -->
