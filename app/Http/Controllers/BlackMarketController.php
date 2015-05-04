@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
-class BurnerShopController extends Controller {
+class BlackMarketController extends Controller {
 
     public function __construct(){
     }
@@ -14,10 +14,10 @@ class BurnerShopController extends Controller {
     public function index(){
         $burners = Burner::where('id', '>', '0')->where('premium', '=', '0')->orderBy('price', 'DESC')->get();
         $premiumBurners = Burner::where('id', '>', '0')->where('premium', '=', '1')->orderBy('price', 'DESC')->get();
-        return view('burnerShop')->with(array('burners' => $burners, 'premiumBurners' => $premiumBurners));
+        return view('blackMarket')->with(array('burners' => $burners, 'premiumBurners' => $premiumBurners));
     }
 
-    public function buy($id){
+    public function buyBurner($id){
         $user = User::find(Auth::id());
         $burner = Burner::find($id);
 

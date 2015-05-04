@@ -79,15 +79,12 @@
                     <!-- <a href="/internet" class="list-group-item">Internet</a> -->
                     <a href="/bank" class="list-group-item {{ Request::is('bank*') ? 'active' : '' }}">Banken</a>
                     <!-- <a href="/casino" class="list-group-item">Kasino</a> -->
-                    <!-- <a href="/weaponStore" class="list-group-item">Vapengallerian</a> -->
-                    <!-- <a href="/armorStore" class="list-group-item">Skyddsbutiken</a> -->
                     <!-- <a href="/luckyShrine" class="list-group-item">Lyckobrunnen</a> -->
-                    <!-- <a href="/market" class="list-group-item">Marknad</a> -->
                     <!-- <a href="/liveMessages" class="list-group-item">Live meddelanden</a> -->
                     <!-- <a href="/smsServices" class="list-group-item">SMS-tjänster</a> -->
                     <!-- <a href="/warehouse" class="list-group-item">Lagerlokalen</a> -->
-                    <a href="/burnerShop" class="list-group-item {{ Request::is('burnerShop*') ? 'active' : '' }}">Boden för brännare</a>
-                    <!-- <a href="/merchant" class="list-group-item">Grosshandlarn</a> -->
+                    <a href="/blackMarket" class="list-group-item {{ Request::is('burnerShop*') ? 'active' : '' }}">Svarta Marknaden</a>
+                    <a href="/merchant" class="list-group-item">Grosshandlarn</a>
                     <!-- <a href="/mashBob" class="list-group-item">Mäskar-Lasse</a> -->
                     <!-- <a href="/laboratory" class="list-group-item">Brännarkammaren</a> -->
                     <!-- <a href="/alcoholMarket" class="list-group-item">Spritmarknaden</a> -->
