@@ -10,7 +10,7 @@ class BankController extends Controller {
 
     public function index(){
         $users = User::get();
-        return view('bank')->with(array('users' => $users));
+        return view('bank.index')->with(array('users' => $users));
     }
 
 }

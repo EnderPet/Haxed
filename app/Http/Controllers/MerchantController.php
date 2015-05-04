@@ -8,7 +8,7 @@ class MerchantController extends Controller {
     }
 
     public function index(){
-        return view('merchant');
+        return view('merchant.index');
     }
 
 }

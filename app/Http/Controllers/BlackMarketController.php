@@ -14,7 +14,7 @@ class BlackMarketController extends Controller {
     public function index(){
         $burners = Burner::where('id', '>', '0')->where('premium', '=', '0')->orderBy('price', 'DESC')->get();
         $premiumBurners = Burner::where('id', '>', '0')->where('premium', '=', '1')->orderBy('price', 'DESC')->get();
-        return view('blackMarket')->with(array('burners' => $burners, 'premiumBurners' => $premiumBurners));
+        return view('blackmarket.index')->with(array('burners' => $burners, 'premiumBurners' => $premiumBurners));
     }
 
     public function buyBurner($id){
