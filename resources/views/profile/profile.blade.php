@@ -16,11 +16,11 @@
                     <div class="col-md-6">
                         <div class="well well-sm">
                             <p><i class="fa fa-money fa-fw"></i> Money: {{ $profiledata->money }}</p>
-                            <p><i class="fa fa-leaf fa-fw"></i>Yeast: {{ $profiledata->yeast }}</p>
-                            <p><i class="fa fa-cubes fa-fw"></i>Sugar: {{ $profiledata->sugar }}</p>
-                            <p><i class="fa fa-cloud fa-fw"></i>Coal: {{ $profiledata->coal }}</p>
+                            <p><i class="fa fa-leaf fa-fw"></i> Yeast: {{ $profiledata->yeast }}</p>
+                            <p><i class="fa fa-cubes fa-fw"></i> Sugar: {{ $profiledata->sugar }}</p>
+                            <p><i class="fa fa-cloud fa-fw"></i> Coal: {{ $profiledata->coal }}</p>
                             <p>? Mash: {{ $profiledata->mash }}</p>
-                            <p><i class="fa fa-flask fa-fw"></i>Alcohol: {{ $profiledata->alcohol }}</p>
+                            <p><i class="fa fa-flask fa-fw"></i> Alcohol: {{ $profiledata->alcohol }}</p>
                         </div>
                     </div>
                 </div>
