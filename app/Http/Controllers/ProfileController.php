@@ -17,11 +17,6 @@ class ProfileController extends Controller {
         return view('profile.profile', array('profiledata' => $profiledata));
     }
 
-    public function edit()
-    {
-        return view('profile.edit');
-    }
-
     public function update()
     {
 
