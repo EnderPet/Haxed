@@ -83,8 +83,8 @@
                     <!-- <a href="/liveMessages" class="list-group-item">Live meddelanden</a> -->
                     <!-- <a href="/smsServices" class="list-group-item">SMS-tjänster</a> -->
                     <!-- <a href="/warehouse" class="list-group-item">Lagerlokalen</a> -->
-                    <a href="/blackMarket" class="list-group-item {{ Request::is('burnerShop*') ? 'active' : '' }}">Svarta Marknaden</a>
-                    <a href="/merchant" class="list-group-item">Grosshandlarn</a>
+                    <a href="/blackMarket" class="list-group-item {{ Request::is('blackMarket*') ? 'active' : '' }}">Svarta Marknaden</a>
+                    <a href="/merchant" class="list-group-item {{ Request::is('marchant*') ? 'active' : '' }}">Grosshandlarn</a>
                     <!-- <a href="/mashBob" class="list-group-item">Mäskar-Lasse</a> -->
                     <!-- <a href="/laboratory" class="list-group-item">Brännarkammaren</a> -->
                     <!-- <a href="/alcoholMarket" class="list-group-item">Spritmarknaden</a> -->
