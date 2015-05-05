@@ -11,15 +11,24 @@
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="form-group">
                                 <label for="inputName">Jäst</label>
-                                <input type="text" class="form-control" name="yeast" value="{{ old('yeast') }}" />
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="yeast" value="{{ old('yeast') }}" />
+                                    <span class="input-group-addon"><i class="fa fa-leaf"></i></span>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputName">Socker</label>
-                                <input type="text" class="form-control" name="sugar" value="{{ old('sugar') }}" />
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="sugar" value="{{ old('sugar') }}" />
+                                    <span class="input-group-addon"><i class="fa fa-cubes"></i></span>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputName">Kol</label>
-                                <input type="text" class="form-control" name="coal" value="{{ old('coal') }}" />
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="coal" value="{{ old('coal') }}" />
+                                    <span class="input-group-addon"><i class="fa fa-cloud"></i></span>
+                                </div>
                             </div>
                             <button type="submit" class="btn btn-primary">Köp</button>
                         </form>

@@ -82,7 +82,7 @@
                     <!-- <a href="/luckyShrine" class="list-group-item">Lyckobrunnen</a> -->
                     <!-- <a href="/liveMessages" class="list-group-item">Live meddelanden</a> -->
                     <!-- <a href="/smsServices" class="list-group-item">SMS-tjänster</a> -->
-                    <!-- <a href="/warehouse" class="list-group-item">Lagerlokalen</a> -->
+                    <a href="/warehouse" class="list-group-item">Lagerlokalen</a>
                     <a href="/blackMarket" class="list-group-item {{ Request::is('blackMarket*') ? 'active' : '' }}">Svarta Marknaden</a>
                     <a href="/merchant" class="list-group-item {{ Request::is('merchant*') ? 'active' : '' }}">Grosshandlarn</a>
                     <!-- <a href="/mashBob" class="list-group-item">Mäskar-Lasse</a> -->
