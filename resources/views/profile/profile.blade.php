@@ -3,7 +3,7 @@
 
     <div class="col-md-12">
         <div class="panel panel-default">
-            <div class="panel-heading">Profile of {{ $profiledata->name }}</div>
+            <div class="panel-heading">Profile of {{ $profiledata->name }} {{ if($profiledata->id == Auth::id()) ? 'edit' : '' }}</div>
             <div class="panel-body">
                 Profile stuff goes here..
             </div>
