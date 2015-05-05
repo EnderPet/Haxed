@@ -1,0 +1,60 @@
+.ui-autocomplete {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    display: none;
+    min-width: 160px;
+    _width: 160px;
+    padding: 0;
+    margin: 5px 0 0 0;
+    list-style: none;
+    background-color: #272B30;
+    border: 1px solid #0c0d0e;
+    border-radius: 3px;
+}
+
+.ui-menu-item > a.ui-corner-all {
+    display: block;
+    padding: 3px 15px;
+    clear: both;
+    font-weight: normal;
+    line-height: 18px;
+    color: #555555;
+    white-space: nowrap;
+}
+
+.ui-state-hover, .ui-state-active {
+   color: #ffffff;
+   text-decoration: none;
+   background-color: #0088cc;
+   border-radius: 0px;
+   -webkit-border-radius: 0px;
+   -moz-border-radius: 0px;
+   background-image: none;
+}
+
+.ui-menu-item:first-child{
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.ui-menu-item:last-child{
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.ui-menu-item{
+    padding: 3px;
+    background: #272b30;
+}
+
+.ui-menu-item:hover{
+    cursor: pointer;
+    color:#fff;
+}
+
+.ui-helper-hidden-accessible{
+    display:none;
+}
