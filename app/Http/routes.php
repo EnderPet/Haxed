@@ -9,6 +9,7 @@ Route::get('/', 'PagesController@index');
 Route::group(array('middleware' => 'auth'), function(){
 
     Route::get('/bank', 'BankController@index');
+    Route::get('/warehouse', 'WarehouseController@index');
     Route::get('/blackMarket', 'BlackMarketController@index');
     Route::get('/blackMarket/burner/{id}', 'BlackMarketController@buyBurner');
     Route::get('/merchant', 'MerchantController@index');
