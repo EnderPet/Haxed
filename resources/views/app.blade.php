@@ -84,7 +84,7 @@
                     <!-- <a href="/smsServices" class="list-group-item">SMS-tjänster</a> -->
                     <!-- <a href="/warehouse" class="list-group-item">Lagerlokalen</a> -->
                     <a href="/blackMarket" class="list-group-item {{ Request::is('blackMarket*') ? 'active' : '' }}">Svarta Marknaden</a>
-                    <a href="/merchant" class="list-group-item {{ Request::is('marchant*') ? 'active' : '' }}">Grosshandlarn</a>
+                    <a href="/merchant" class="list-group-item {{ Request::is('merchant*') ? 'active' : '' }}">Grosshandlarn</a>
                     <!-- <a href="/mashBob" class="list-group-item">Mäskar-Lasse</a> -->
                     <!-- <a href="/laboratory" class="list-group-item">Brännarkammaren</a> -->
                     <!-- <a href="/alcoholMarket" class="list-group-item">Spritmarknaden</a> -->
