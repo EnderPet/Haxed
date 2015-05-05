@@ -51,7 +51,7 @@
                                                 <td>{{ $burner->max_capacity }} L</td>
                                                 <td>{{ $burner->price }} kr</td>
                                                 <td>{{ $burner->level_requirement }}</td>
-                                                <td class="text-center">{!! ($user->burner_id == $burder->id) ? '' : '<a href="/blackMarket/burner/{{ $burner->id }}">Köp</a>' !!} </td>
+                                                <td class="text-center">{!! ($user->burner_id == $burner->id) ? '' : '<a href="/blackMarket/burner/{{ $burner->id }}">Köp</a>' !!} </td>
                                             </tr>
                                         @endforeach
                                         </tbody>
