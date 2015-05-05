@@ -6,24 +6,24 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateForumsTable extends Migration {
 
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
-		Schema::create('forum_threads', function(Blueprint $table)
-		{
-			$table->increments('id')->unsigned();
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('forum_threads', function(Blueprint $table)
+        {
+            $table->increments('id')->unsigned();
             $table->integer('channel');
             $table->string('title');
             $table->text('content');
             $table->integer('replies');
             $table->string('created_by');
             $table->string('updated_by');
-			$table->timestamps();
-		});
+            $table->timestamps();
+        });
 
         Schema::create('forum_replies', function(Blueprint $table){
             $table->increments('id');
@@ -42,18 +42,18 @@ class CreateForumsTable extends Migration {
         Schema::table('forum_replies', function(Blueprint $table){
             $table->foreign('forum_threads_id')->references('id')->on('forum_threads')->onDelete('cascade');
         });
-	}
+    }
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
         Schema::drop('forum_threads');
         Schema::drop('forum_replies');
         Schema::drop('forum_channels');
-	}
+    }
 
 }

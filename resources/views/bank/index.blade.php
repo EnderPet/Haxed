@@ -129,8 +129,8 @@
     <script type="text/javascript">
         $( document ).ready(function() {
             var availableTags = [
-                @foreach($users as $user)
-                "{{ $user['name'] }}",
+                @foreach($users as $userlist)
+                "{{ $userlist['name'] }}",
                 @endforeach
             ];
 

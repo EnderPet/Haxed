@@ -59,6 +59,11 @@
                                 <span class="progress-value">Experience {{ $user->exp }} / {{ $user->max_exp }}</span>
                             </div>
                         </div>
+                        <span class="clearfix">Brännare: {{ $user->burner()->first()->name }}</span>
+                        <span class="clearfix">Lagerlokal: {{ $user->warehouse_id }}</span>
+                        <span class="clearfix">Vapen: {{ $user->weapon_id }}</span>
+                        <span class="clearfix">Skydd: {{ $user->armor_id }}</span>
+                        <span class="clearfix">Amulett: {{ $user->amulet_id }}</span>
                         <hr />
                         <a href="/auth/logout" class="btn btn-default btn-block">Logga ut</a>
                     </div>
@@ -74,15 +79,12 @@
                     <!-- <a href="/internet" class="list-group-item">Internet</a> -->
                     <a href="/bank" class="list-group-item {{ Request::is('bank*') ? 'active' : '' }}">Banken</a>
                     <!-- <a href="/casino" class="list-group-item">Kasino</a> -->
-                    <!-- <a href="/weaponStore" class="list-group-item">Vapengallerian</a> -->
-                    <!-- <a href="/armorStore" class="list-group-item">Skyddsbutiken</a> -->
                     <!-- <a href="/luckyShrine" class="list-group-item">Lyckobrunnen</a> -->
-                    <!-- <a href="/market" class="list-group-item">Marknad</a> -->
                     <!-- <a href="/liveMessages" class="list-group-item">Live meddelanden</a> -->
                     <!-- <a href="/smsServices" class="list-group-item">SMS-tjänster</a> -->
                     <!-- <a href="/warehouse" class="list-group-item">Lagerlokalen</a> -->
-                    <a href="/burnerShop" class="list-group-item {{ Request::is('burnerShop*') ? 'active' : '' }}">Boden för brännare</a>
-                    <!-- <a href="/merchant" class="list-group-item">Grosshandlarn</a> -->
+                    <a href="/blackMarket" class="list-group-item {{ Request::is('burnerShop*') ? 'active' : '' }}">Svarta Marknaden</a>
+                    <a href="/merchant" class="list-group-item">Grosshandlarn</a>
                     <!-- <a href="/mashBob" class="list-group-item">Mäskar-Lasse</a> -->
                     <!-- <a href="/laboratory" class="list-group-item">Brännarkammaren</a> -->
                     <!-- <a href="/alcoholMarket" class="list-group-item">Spritmarknaden</a> -->
@@ -199,7 +201,7 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 @yield('javascript')
 </body>

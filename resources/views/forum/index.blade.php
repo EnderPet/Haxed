@@ -9,21 +9,22 @@
                 <div class="panel-heading">
                     Forum
                     <button id="start-discussion" class="pull-right btn btn-primary btn-xs start-discussion">Starta Diskussion</button>
-                    <form class="pull-right" style="width: 200px;">
+                    <form class="pull-right" method="POST" action="/forum" style="width: 200px;">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="input-group pull-right">
                             <span class="input-group-addon input-grp-xsm"><i class="fa fa-search"></i></span>
-                            <input type="text" class="form-control input-xsm" placeholder="Sök i forum">
+                            <input type="text" class="form-control input-xsm" name="search" placeholder="Sök i forum">
                         </div>
                     </form>
                 </div>
                 <div class="panel-body">
                     <div class="forum-nav">
                         <ul>
-                            <li><a href="#" class="active">Alla</a></li>
-                            <li><a href="#">Allmänt</a></li>
-                            <li><a href="#">Gängrelaterat</a></li>
-                            <li><a href="#">Förslag</a></li>
-                            <li><a href="#">Mina Diskussioner</a></li>
+                            <li><a href="/forum" {{ Request::is('forum') ? 'class=active' : '' }}>Alla</a></li>
+                            @foreach($channels as $channel)
+                                <li><a href="/forum/channel/{{ strtolower($channel->name) }}" {{ Request::is('forum/channel/' . strtolower($channel->name)) ? 'class=active' : '' }}>{{ $channel->name }}</a></li>
+                            @endforeach
+                                <li><a href="/forum/mina-diskussioner" {{ Request::is('forum/mina-diskussioner') ? 'class=active' : '' }}>Mina Diskussioner</a></li>
                         </ul>
                     </div>
                     <div class="forum-wrap">
@@ -47,7 +48,7 @@
                             ?>
                         <article>
                             <div class="forum-body">
-                                <a href="#"><h5>{{ $thread->title }}</h5></a>
+                                <a href="/forum/view/{{ $thread->title . '-' . $thread->id }}"><h5>{{ $thread->title }}</h5></a>
                                     <a href="#" class="forum-channel btn btn-{{ ($thread->channel == 1 ? "primary" : ($thread->channel == 2 ? "warning" : ($thread->channel == 3 ? "danger" : "default"))) }} btn-forum disabled">{{ $thread->channel()->first()->name }}</a> <span class="text-muted fpt">Senaste aktivitet var {{ $timeprint }} av <a href="#">{{ $thread->user()->first()->name }}</a></span>
                             </div>
                             <div class="forum-meta">
@@ -59,15 +60,7 @@
                         @endforeach
                     </div>
                     <div class="col-md-12 text-center">
-                        <ul class="pagination pagination-sm">
-                            <li class="disabled"><a href="#">«</a></li>
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">»</a></li>
-                        </ul>
+                        {!! $threads->render() !!}
                     </div>
                 </div>
             </div>

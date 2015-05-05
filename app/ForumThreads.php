@@ -18,4 +18,8 @@ class ForumThreads extends Model {
         return $this->hasOne('App\ForumChannels', 'id', 'channel');
     }
 
+    public function replies(){
+        return $this->hasMany('App\ForumReplies', 'forum_thread_id', 'id');
+    }
+
 }

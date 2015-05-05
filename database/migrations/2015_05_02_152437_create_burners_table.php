@@ -21,6 +21,7 @@ class CreateBurnersTable extends Migration {
             $table->string('max_capacity');
             $table->string('price');
             $table->string('level_requirement');
+            $table->integer('premium');
 			$table->timestamps();
 		});
 	}
