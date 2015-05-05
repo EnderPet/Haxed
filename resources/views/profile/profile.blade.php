@@ -6,9 +6,9 @@
             <div class="panel-heading">Profile of {{ $profiledata->name }}</div>
             <div class="panel-body">
                 <div class="well well-sm">
-                    Username: {{ $profiledata->name }}
-                    Level: {{ $profiledata->level }}
-                    Experience: {{ $profiledata->exp }} / {{ $profiledata->max_exp }}
+                    <p>Username: {{ $profiledata->name }}</p>
+                    <p>Level: {{ $profiledata->level }}</p>
+                    <p>Experience: {{ $profiledata->exp }} / {{ $profiledata->max_exp }}</p>
                 </div>
                 <div class="well well-sm">
                     Money: {{ $profiledata->money }}
