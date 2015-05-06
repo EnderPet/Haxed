@@ -43,6 +43,11 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
+Route::get('/setlang/{lang}', function($lang) {
+    Session::put('locale', $lang);
+    return redirect('/');
+});
+
 Route::get('/messages/searchusers', function() {
     $test = User::get();
     $in = array();
