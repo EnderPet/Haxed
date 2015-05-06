@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="col-md-6 well">
-            <div class="">{{ $mess->message }}</div>
+            <div class="">{{ nl2br($mess->message) }}</div>
         </div>
     </div>
 @endsection
