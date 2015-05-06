@@ -39,4 +39,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->hasOne('App\Burner', 'id', 'burner_id');
     }
 
+    public function warehouse(){
+        return $this->hasOne('App\Warehouse', 'id', 'warehouse_id');
+    }
 }

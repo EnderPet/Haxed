@@ -60,7 +60,7 @@
                             </div>
                         </div>
                         <span class="clearfix">Brännare: {{ $user->burner()->first()->name }}</span>
-                        <span class="clearfix">Lagerlokal: {{ $user->warehouse_id }}</span>
+                        <span class="clearfix">Lagerlokal: {{ $user->warehouse()->first()->name }}</span>
                         <span class="clearfix">Vapen: {{ $user->weapon_id }}</span>
                         <span class="clearfix">Skydd: {{ $user->armor_id }}</span>
                         <span class="clearfix">Amulett: {{ $user->amulet_id }}</span>
