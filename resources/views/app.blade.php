@@ -60,10 +60,10 @@
                                 <span class="progress-value">Experience {{ $user->exp }} / {{ $user->max_exp }}</span>
                             </div>
                         </div>
-                        <span class="clearfix">{{ Lang::get('general.burners') }}: {{ $user->burner()->first()->name }}</span>
+                        <span class="clearfix">{{ trans('general.burners') }}: {{ $user->burner()->first()->name }}</span>
                         <span class="clearfix">{{ Lang::get('general.storehouse') }}: {{ $user->warehouse()->first()->name }}</span>
                         <span class="clearfix">{{ Lang::get('general.weapon') }}: {{ $user->weapon_id }}</span>
-                        <span class="clearfix">{{ Lang::get('general.armor') }}: {{ $user->armor_id }}</span>
+                        <span class="clearfix">{{ Lang::get('general.protection') }}: {{ $user->armor_id }}</span>
                         <span class="clearfix">{{ Lang::get('general.amulet') }}: {{ $user->amulet_id }}</span>
                         <hr />
                         <a href="/auth/logout" class="btn btn-default btn-block">{{ Lang::get('validation.attributes.logout') }}</a>
