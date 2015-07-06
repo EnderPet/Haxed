@@ -21,6 +21,9 @@
                                 {!! nl2br($thread->content) !!}
                             </div>
                             <div class="forum-meta">
+                                @if($thread->author()->first()->id == Auth::user()->id)
+                                    <a href="/forum/edit/reply/{{ $thread->id }}">Edit</a> | <a href="/forum/delete/reply/{{ $thread->id }}">Delete</a>
+                                @endif
                             </div>
                         </article>
 
@@ -34,6 +37,9 @@
                                 {!! nl2br($reply->content) !!}
                             </div>
                             <div class="forum-meta">
+                                @if($reply->author()->first()->id == Auth::user()->id)
+                                    <a href="/forum/edit/reply/{{ $reply->id }}">Edit</a> | <a href="/forum/delete/reply/{{ $reply->id }}">Delete</a>
+                                @endif
                             </div>
                         </article>
                         @endforeach
