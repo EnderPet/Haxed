@@ -44,10 +44,8 @@ Route::controllers([
 ]);
 
 Route::get('/setlang/{lang}', function($lang) {
-    //Session::put('locale', $lang);
-    //return redirect('/');
-
-    echo $lang;
+    \Session::put('locale', $lang);
+    return redirect('/');
 });
 
 Route::get('/messages/searchusers', function() {
