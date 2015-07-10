@@ -10,6 +10,7 @@ class Kernel extends HttpKernel {
 	 * @var array
 	 */
 	protected $middleware = [
+        'App\Http\Middleware\Language',
 		'Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode',
 		'Illuminate\Cookie\Middleware\EncryptCookies',
 		'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
@@ -17,7 +18,6 @@ class Kernel extends HttpKernel {
 		'Illuminate\View\Middleware\ShareErrorsFromSession',
 		'App\Http\Middleware\VerifyCsrfToken',
         'App\Http\Middleware\Cronjob',
-        'App\Http\Middleware\LocaleMiddleware',
 	];
 
 	/**
