@@ -8,6 +8,8 @@ use Illuminate\Contracts\Routing\Middleware;
 
 class Language {
 
+    public $locales = ['en' => 'English', 'sv' => 'Swedish'];
+
     public function __construct(Application $app, Redirector $redirector, Request $request) {
         $this->app = $app;
         $this->redirector = $redirector;
@@ -24,16 +26,16 @@ class Language {
     public function handle($request, Closure $next)
     {
         // Make sure current locale exists.
-        $locale = $request->segment(1);
+        /*$locale = $request->segment(1);
 
-        if ( ! array_key_exists($locale, $this->app->config->get('app.locales'))) {
+        if ( ! array_key_exists($locale, $this->locales)) {
             $segments = $request->segments();
             $segments[0] = $this->app->config->get('app.fallback_locale');
 
             return $this->redirector->to(implode('/', $segments));
         }
 
-        $this->app->setLocale($locale);
+        $this->app->setLocale($locale);*/
 
         return $next($request);
     }
