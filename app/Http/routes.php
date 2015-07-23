@@ -36,6 +36,9 @@ Route::group(array('middleware' => 'auth'), function(){
         });
     });
 
+    Route::get('/news', 'NewsController@index');
+    Route::get('/news/read/{id}', 'NewsController@read');
+
 });
 
 Route::controllers([
